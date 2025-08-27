@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "5a7adef7-7652-4c6e-92b5-e7e1fedcbe37",
+		"name": "Employee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10657983"
+	},
+	"item": [
+		{
+			"name": "getAllEmp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getAllEmp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAllEmp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmpName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getEmpName/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getEmpName",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmpId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getEmpId/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getEmpId",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveEmp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Abahy\",\r\n    \"lastName\": \"gadwal\",\r\n    \"mobile\": \"90909090\",\r\n     \"age\": 3,\r\n     \"address\" : \"Burhanpur\",\r\n     \"dept\" : \"IT\",\r\n     \"post\" : \"Student\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/saveEmp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saveEmp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fakestoreapi.com/users",
+					"protocol": "https",
+					"host": [
+						"fakestoreapi",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
