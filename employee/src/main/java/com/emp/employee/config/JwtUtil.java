@@ -1,17 +1,28 @@
-package com.emp.employee.util;
+package com.emp.employee.config;
 
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+@Component
 public class JwtUtil {
-    private final String SECRET_KEY = "your_secret_key";
 
-    public String generateToken(String username) {
+    @Value("${jwt.secret}")
+    private String SECRET_KEY;
+
+    /*public JwtUtil() {
+        SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        SECRET_KEY = Base64.getEncoder().encodeToString(key.getEncoded());
+        System.out.println(SECRET_KEY);
+    }*/
+
+    public String generateToken(UserDetails userDetails) {
         return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date())
+                .setSubject(userDetails.getUsername())
+                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 10 hours
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();

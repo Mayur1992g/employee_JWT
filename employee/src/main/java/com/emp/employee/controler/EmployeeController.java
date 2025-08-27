@@ -35,9 +35,9 @@ public class EmployeeController {
 		return ResponseEntity.ok(updatedEmployee);
 	}
 
-	@GetMapping("/")
-	public Employee getEmployeeById(@PathVariable("employeeId") Long employeeId) {
-		return employeeService.getEmployeeById(employeeId);
+	@GetMapping("/{id}")
+	public Employee getEmployeeById(@PathVariable Long id) {
+		return employeeService.getEmployeeById(id);
 	}
 
 	@DeleteMapping("/")
